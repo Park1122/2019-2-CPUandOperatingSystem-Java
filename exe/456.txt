@@ -1,0 +1,32 @@
+.stack
+size = 3
+
+.code
+// sti maxCount 10
+LDI 10
+STA 0
+// sti sum 0
+LDI 0
+STA 4
+// sti count 0
+LDI 0
+STA 8
+//sum = sum+count
+LDA 4
+ADDA 8
+STA 4
+PRT 4
+LDI 1
+ADDA 8
+STA 8
+LDA 0
+SUBA 8
+CMP 0
+// jump if(less than zero) pc = 6
+JGE 6
+
+// sout(sum)
+LDA 4
+
+//exit
+HLT 0
